@@ -2,7 +2,12 @@ import { Notify } from 'notiflix';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './js/fetchCountries';
 import { refs } from './js/refs';
-import { clearCountryInfo, clearCountryList } from './js/render-functions';
+import {
+  clearCountryInfo,
+  clearCountryList,
+  markupCountryList,
+  markupCountryInfo,
+} from './js/render-functions';
 
 import './css/styles.css';
 
@@ -29,10 +34,14 @@ function onInput(evt) {
       }
       if (countries.length >= 2 && countries.length <= 10) {
         clearCountryInfo();
-        Notify.success('Hurray! We draw countries list.');
+        markupCountryList(countries);
+
+        Notify.success('Hurray! We draw to you countries list.');
       }
       if (countries.length === 1) {
         clearCountryList();
+        markupCountryInfo(countries);
+
         Notify.success('This is your country!');
       }
 
