@@ -36,7 +36,9 @@ function onInput(evt) {
         clearCountryInfo();
         markupCountryList(countries);
 
-        Notify.success('Hurray! We draw to you countries list.');
+        Notify.success(
+          'We make a list of countries which are close to your request.'
+        );
       }
       if (countries.length === 1) {
         clearCountryList();
