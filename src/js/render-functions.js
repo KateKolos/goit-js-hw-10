@@ -25,11 +25,11 @@ export function markupCountryInfo(country) {
   const markup = country
     .map(({ name, capital, population, flags, languages }) => {
       return `<li>
-        <img src="${flags.svg}" width="70" height="50"/> 
+        <img src="${flags.svg}" alt="${flags.alt}" width="70" height="50"/> 
         <h2>${name.official}</h2>
         <p>Capital: ${capital}</p>
         <p>Population: ${population}</p>
-        <p>Languages: ${languages}</p>
+        <p>Languages: ${Object.values(languages).join(',')}</p>
       </li>`;
     })
     .join('');
