@@ -37,7 +37,7 @@ function onInput(evt) {
         markupCountryList(countries);
 
         Notify.success(
-          'We make a list of countries which are close to your request.'
+          'We made a list of countries which are close to your request.'
         );
       }
       if (countries.length === 1) {
